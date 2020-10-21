@@ -5,6 +5,13 @@ import { exec } from "promisify-child-process";
 import { execFile } from "child_process";
 import { Range, TextDocument } from "vscode";
 
+interface RejigSettings {
+  prefixGroups: String[];
+  displayImportGroupTitles: Boolean;
+  displayImportBorderTop: Boolean;
+  displayImportBorderBottom: Boolean;
+}
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -23,32 +30,47 @@ export function activate(context: vscode.ExtensionContext) {
       if (!vscode.window.activeTextEditor) {
         return;
       }
+
       const editor = vscode.window.activeTextEditor;
-			const fullRange: Range = fullDocumentRange(editor.document);
-      console.log(editor.document.uri.fsPath);
-			console.log(editor.document.languageId);
+      const fullRange = fullDocumentRange(editor.document);
 
       try {
-        // const child = exec('/home/matt/dev/rejig/build/rejig --stdin', [);
-        const child = execFile(
-          "/home/matt/dev/rejig/build/rejig",
-          ["--stdin", `--${editor.document.languageId}`],
-          { encoding: "utf-8" }
-				);
+        const args = [];
+        const config = vscode.workspace.getConfiguration("rejig");
 
+        // cli args requires each element to be in string sep by whitespace
+        if (config.prefixGroups.length > 0) {
+          args.push("--prefixes", config.prefixGroups?.join(" "));
+        }
 
-				child.stdin?.write(editor.document.getText()); //document.getText());
-				child.stdin?.end();
+        // remaining config are all flags, if provided setting is enabled
+        if (config.displayImportGroupTitles) {
+          args.push("--titles");
+        }
+        if (config.displayImportBorderTop) {
+          args.push("--border-top");
+        }
+        if (config.displayImportBorderBottom) {
+          args.push("--border-bottom");
+        }
+        args.push("--stdin");
+        args.push(`--${editor.document.languageId}`);
 
-				child.stdout?.on('data', data => {
-					// console.log(data)
-					editor.edit(editBuilder => {
-						editBuilder.replace(fullRange, data);
-					});
-				})
+        console.log(args);
+        const child = execFile("/home/matt/dev/rejig/build/rejig", args, {
+          encoding: "utf-8",
+        });
+
+        child.stdin?.write(editor.document.getText());
+        child.stdin?.end();
+
+        child.stdout?.on("data", (data) => {
+          editor.edit((editBuilder) => {
+            editBuilder.replace(fullRange, data);
+          });
+        });
         // console.log("write to stdin");
-				// const { stdout, stderr } = await child;
-
+        // const { stdout, stderr } = await child;
 
         // console.log("stdout dump");
         // console.log(String(stdout?.read()));
@@ -91,8 +113,7 @@ export function activate(context: vscode.ExtensionContext) {
 // this method is called when your extension is deactivated
 export function deactivate() {}
 
-
 function fullDocumentRange(document: TextDocument): Range {
-	const last: number = document.lineCount - 1;
-	return new Range(0, 0, last, document.lineAt(last).text.length);
+  const last: number = document.lineCount - 1;
+  return new Range(0, 0, last, document.lineAt(last).text.length);
 }

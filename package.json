@@ -19,7 +19,7 @@
     "commands": [
       {
         "command": "rejig-vscode.runFormatter",
-        "title": "rejig format module header"
+        "title": "rejig document"
       }
     ],
     "menus": {
@@ -29,6 +29,32 @@
           "when": "editorLangId == haskell || editorLangId == daml"
         }
       ]
+    },
+    "configuration": {
+      "title": "Rejig",
+      "type": "object",
+      "properties": {
+        "rejig.prefixGroups": {
+          "type": "array",
+          "default": [],
+          "description": "import names beginning with matching prefixes are grouped together"
+        },
+        "rejig.displayImportGroupTitles": {
+          "type": "boolean",
+          "default": false,
+          "description": "Display description above each import group (useful paired with prefix groups)"
+        },
+        "rejig.displayImportBorderTop": {
+          "type": "boolean",
+          "default": true,
+          "description": "Display line at the start of import declarations for visual separation"
+        },
+        "rejig.displayImportBorderBottom": {
+          "type": "boolean",
+          "default": true,
+          "description": "Display line at the end of import declarations for visual separation"
+        }
+      }
     }
   },
   "scripts": {
