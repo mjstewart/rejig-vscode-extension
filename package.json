@@ -1,7 +1,7 @@
 {
   "name": "rejig-vscode",
   "displayName": "rejig-vscode-extension",
-  "description": "runs the rejig module header formatting tool",
+  "description": "runs the rejig formatting tool",
   "publisher": "Matt Stewart",
   "repository": "https://github.com/mjstewart/rejig-vscode-extension",
   "version": "0.0.1",
@@ -19,7 +19,7 @@
     "commands": [
       {
         "command": "rejig-vscode.runFormatter",
-        "title": "rejig document"
+        "title": "Rejig Document"
       }
     ],
     "menus": {
@@ -37,12 +37,12 @@
         "rejig.prefixGroups": {
           "type": "array",
           "default": [],
-          "description": "import names beginning with matching prefixes are grouped together"
+          "description": "import names beginning with matching prefixes are grouped together. Provide from least to most specific order"
         },
         "rejig.displayImportGroupTitles": {
           "type": "boolean",
           "default": false,
-          "description": "Display description above each import group (useful paired with prefix groups)"
+          "description": "Display description above each import group"
         },
         "rejig.displayImportBorderTop": {
           "type": "boolean",
@@ -53,6 +53,11 @@
           "type": "boolean",
           "default": true,
           "description": "Display line at the end of import declarations for visual separation"
+        },
+        "rejig.writeErrorFile": {
+          "type": "boolean",
+          "default": true,
+          "description": "Write errors to file 'rigig-error.txt' located in workspace root directory"
         }
       }
     }
