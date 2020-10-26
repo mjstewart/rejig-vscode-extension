@@ -20,7 +20,8 @@ Any errors are written to `rejig-errors.txt` in workspace root by default.
 
 This extension contributes most of the [rejig flags](https://github.com/mjstewart/rejig#args).
 
-example `settings.json`
+Here's an example `settings.json` where `rejig.prefixGroups` are application specific.
+
 ```
 
   "rejig.prefixGroups": [
@@ -49,5 +50,3 @@ Please create a github issue
 ### 1.0.0
 
 Initial release
-
-**Enjoy!**

@@ -1,5 +1,5 @@
 {
-  "name": "rejig-vscode",
+  "name": "rejig-vscode-extension",
   "displayName": "rejig-vscode-extension",
   "description": "runs the rejig formatting tool",
   "publisher": "Matt Stewart",
