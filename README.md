@@ -57,3 +57,20 @@ Please create a github issue
 ## Release Notes
 
 See [CHANGELOG.md](https://github.com/mjstewart/rejig-vscode-extension/blob/master/CHANGELOG.md)
+
+## dev
+
+https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+
+1. create the `.vsix`
+```
+vsce package
+```
+
+2. Upload to github releases
+
+3. Install
+
+```
+code --install-extension rejig-vscode-extension-${VERSION}.vsix
+```
