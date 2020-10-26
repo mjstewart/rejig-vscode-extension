@@ -11,7 +11,7 @@ A command is registered and made available within `haskell` and `daml` files.
 
 ## Requirements
 
-`rejig` must be available on `$PATH`. See [rejig](https://github.com/mjstewart/rejig) for assistance.
+`rejig` must be available on `$PATH`. See [rejig](https://github.com/mjstewart/rejig#installation) for assistance.
 
 ## Install
 
