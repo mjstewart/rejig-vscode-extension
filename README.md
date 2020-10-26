@@ -18,12 +18,9 @@ Any errors are written to `rejig-errors.txt` in workspace root by default.
 
 ## Install
 
-This extension is not yet published on the marketplace so a manual install is required.
+Available in the marketplace
 
-1. [Download lastest version](https://github.com/mjstewart/rejig-vscode-extension/releases)
-
-2. `code --install-extension rejig-vscode-extension-0.0.1.vsix`
-
+https://marketplace.visualstudio.com/items?itemName=MattStewart.rejig-vscode-extension
 
 ## Extension Settings
 
@@ -32,7 +29,6 @@ This extension contributes most of the [rejig flags](https://github.com/mjstewar
 Here's an example `settings.json` where `rejig.prefixGroups` are application specific.
 
 ```
-
   "rejig.prefixGroups": [
     "DA"
   , "DA.Next"
@@ -57,20 +53,3 @@ Please create a github issue
 ## Release Notes
 
 See [CHANGELOG.md](https://github.com/mjstewart/rejig-vscode-extension/blob/master/CHANGELOG.md)
-
-## dev
-
-https://code.visualstudio.com/api/working-with-extensions/publishing-extension
-
-1. create the `.vsix`
-```
-vsce package
-```
-
-2. Upload to github releases
-
-3. Install
-
-```
-code --install-extension rejig-vscode-extension-${VERSION}.vsix
-```
