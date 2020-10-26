@@ -1,20 +1,17 @@
 # rejig-vscode-extension
 
-[rejig-vscode-extension](https://github.com/mjstewart/rejig-vscode-extension) connects
-to the [rejig](https://github.com/mjstewart/rejig) module header formatting tool.
+VS Code extension for the [rejig](https://github.com/mjstewart/rejig) Haskell/DAML module header formatting tool.
 
-A command is registered and made available within `haskell` or `daml` files.
+A command is registered and made available within `haskell` and `daml` files.
 
 1. invoke the command pallete `ctrl+shift+p`
 2. `>Rejig Document`
 
-Any errors are written to `rejig-errors.txt` in workspace root by default.
-
-![Output sample](https://github.com/mjstewart/rejig-vscode-extension/blob/master/rejig-vscode-sample.gif)
+![demo](rejig-vscode-sample.gif)
 
 ## Requirements
 
-`rejig` must be available on `$PATH`. See [rejig](https://github.com/mjstewart/rejig) for an example setup.
+`rejig` must be available on `$PATH`. See [rejig](https://github.com/mjstewart/rejig) for assistance.
 
 ## Install
 
@@ -26,7 +23,7 @@ https://marketplace.visualstudio.com/items?itemName=MattStewart.rejig-vscode-ext
 
 This extension contributes most of the [rejig flags](https://github.com/mjstewart/rejig#args).
 
-Here's an example `settings.json` where `rejig.prefixGroups` are application specific.
+Here's an example `settings.json` keeping in mind that `rejig.prefixGroups` are application specific.
 
 ```
   "rejig.prefixGroups": [

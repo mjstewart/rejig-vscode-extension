@@ -1,15 +1,22 @@
 {
   "name": "rejig-vscode-extension",
-  "displayName": "rejig-vscode-extension",
-  "description": "runs the rejig formatting tool",
+  "displayName": "rejig",
+  "description": "VS Code extension for rejig Haskell/DAML module header formatting tool",
   "publisher": "MattStewart",
-  "repository": "https://github.com/mjstewart/rejig-vscode-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjstewart/rejig-vscode-extension"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.50.0"
   },
   "categories": [
     "Formatters"
+  ],
+  "keywords": [
+    "haskell",
+    "daml"
   ],
   "activationEvents": [
     "onCommand:rejig-vscode.runFormatter"
