@@ -10,7 +10,7 @@ A command is registered and made available within `haskell` or `daml` files.
 
 Any errors are written to `rejig-errors.txt` in workspace root by default.
 
-![Output sample](https://github.com/mjstewart/rejig-vscode-extension/rejig-vscode-sample.gif)
+![Output sample](https://github.com/mjstewart/rejig-vscode-extension/blob/master/rejig-vscode-sample.gif)
 
 ## Requirements
 
