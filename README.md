@@ -38,11 +38,11 @@ example `settings.json`
 ```
 
 * `rejig.prefixGroups`: Most specific prefixes must be listed last
-* `rejig.writeErrorFile`: writes errors `rejig-error.txt` within workspace root so you may wish to add this to `.gitignore`.
+* `rejig.writeErrorFile`: within workspace root, errors are written to `rejig-error.txt`. Recommended to add this file to `.gitignore`.
 
 ## Known Issues
 
-Please create a github issue 
+Please create a github issue
 
 ## Release Notes
 
