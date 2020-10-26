@@ -47,8 +47,8 @@ Here's an example `settings.json` where `rejig.prefixGroups` are application spe
   "rejig.writeErrorFile": true
 ```
 
-* `rejig.prefixGroups`: Most specific prefixes must be listed last
-* `rejig.writeErrorFile`: within workspace root, errors are written to `rejig-error.txt`. Recommended to add this file to `.gitignore`.
+* `rejig.prefixGroups`: The most specific prefixes must be listed last
+* `rejig.writeErrorFile`: within the workspace root directory, errors are written to `rejig-error.txt`. It's recommended to add this file to `.gitignore`.
 
 ## Known Issues
 
@@ -56,6 +56,4 @@ Please create a github issue
 
 ## Release Notes
 
-### 1.0.0
-
-Initial release
+See [CHANGELOG.md](https://github.com/mjstewart/rejig-vscode-extension/blob/master/CHANGELOG.md)
