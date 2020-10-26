@@ -47,10 +47,7 @@ export function activate(context: vscode.ExtensionContext) {
         args.push("--stdin", editor.document.fileName);
         args.push(`--${editor.document.languageId}`);
 
-        const child = child_proc.execFile(
-          "/home/matt/dev/rejig/build/rejig",
-          args
-        );
+        const child = child_proc.execFile("rejig", args);
 
         child.stdin?.write(editor.document.getText());
         child.stdin?.end();
@@ -102,7 +99,9 @@ async function onError(
         path: posix.join(wsUri.path, "rejig-error.txt"),
       });
       await vscode.workspace.fs.writeFile(fileUri, Buffer.from(body, "utf8"));
-      vscode.window.showErrorMessage("Rejig: See 'rejig-error.txt' for details");
+      vscode.window.showErrorMessage(
+        "Rejig: See 'rejig-error.txt' for details"
+      );
     }
   }
 }
