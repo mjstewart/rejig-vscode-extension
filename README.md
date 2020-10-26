@@ -16,6 +16,15 @@ Any errors are written to `rejig-errors.txt` in workspace root by default.
 
 `rejig` must be available on `$PATH`. See [rejig](https://github.com/mjstewart/rejig) for an example setup.
 
+## Install
+
+This extension is not yet published on the marketplace so a manual install is required.
+
+1. [Download lastest version](https://github.com/mjstewart/rejig-vscode-extension/releases)
+
+2. `code --install-extension rejig-vscode-extension-0.0.1.vsix`
+
+
 ## Extension Settings
 
 This extension contributes most of the [rejig flags](https://github.com/mjstewart/rejig#args).
@@ -29,8 +38,8 @@ Here's an example `settings.json` where `rejig.prefixGroups` are application spe
   , "DA.Next"
   , "DA.Finance"
   , "Daml"
-  , "Test.MyApp"
-  , "Main.MyApp"
+  , "MyApp.Test"
+  , "MyApp.Main"
   ],
   "rejig.displayImportGroupTitles": true,
   "rejig.displayImportBorderTop": true,
